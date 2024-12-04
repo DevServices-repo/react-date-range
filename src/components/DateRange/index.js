@@ -62,9 +62,7 @@ class DateRange extends Component {
     let isStartDateSelected = focusedRange[1] === 0;
     if (isBefore(endDate, startDate)) {
       isStartDateSelected = !isStartDateSelected;
-      if (!this.props.doNotReverseDates) {
-        [startDate, endDate] = [endDate, startDate];
-      }
+      // [startDate, endDate] = [endDate, startDate];
     }
 
     const inValidDatesWithinRange = disabledDates.filter(disabledDate =>
