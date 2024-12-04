@@ -11,6 +11,7 @@ class DateRangePicker extends Component {
     super(props);
     this.state = {
       focusedRange: [findNextRangeIndex(props.ranges), 0],
+      doNotReverseDates: this.props.doNotReverseDates || false,
     };
     this.styles = generateStyles([coreStyles, props.classNames]);
   }
@@ -35,6 +36,7 @@ class DateRangePicker extends Component {
           {...this.props}
           ref={t => (this.dateRange = t)}
           className={undefined}
+          doNotReverseDates={this.state.doNotReverseDates}
         />
       </div>
     );
